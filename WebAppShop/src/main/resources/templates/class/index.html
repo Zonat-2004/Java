@@ -1,0 +1,23 @@
+<a th:href="@{/class/add}">Them Moi</a>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Code</th>
+			<th>Name</th>
+			<th>Cammand</th>
+		</tr>
+	</thead>
+	<tbody th:each="o : ${list}">
+		<tr>
+			<td th:text="${o.id}"></td>
+			<td th:text="${o.code}"></td>
+			<td th:text="${o.name}"></td>
+			<td>
+				<a th:href="@{/class/edit/{id}(id=${o.id})}">Edit</a>	
+				<a th:href="@{/class/delete/{id}(id=${o.id})}">Delete</a>
+			</td>
+		</tr>
+			
+	</tbody>
+</table>

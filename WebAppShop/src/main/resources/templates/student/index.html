@@ -1,0 +1,30 @@
+<a th:href="@{/student/add}">Them moi</a>
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Class</th>
+			<th>Code</th>
+			<th>FisrtName</th>
+			<th>LastName</th>
+			<th>Email</th>
+			<th>Gender</th>
+			<th>Command</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="o : ${list}">
+			<td th:text="${o.id}"></td>
+			<td th:text="${o.clazz.name}"></td>
+			<td th:text="${o.code}"></td>
+			<td th:text="${o.firstName}"></td>
+			<td th:text="${o.lastName}"></td>
+			<td th:text="${o.email}"></td>
+			<td th:text="${o.gender}"></td>
+			<td>
+				<a th:href="@{/student/edit/{id}(id=${o.id})}">Edit</a>	
+				<a th:href="@{/student/delete/{id}(id=${o.id})}">Delete</a>
+			</td>
+		</tr>
+	</tbody>
+</table>
